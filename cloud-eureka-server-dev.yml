@@ -1,0 +1,37 @@
+server:
+  port: 8061
+
+logging:
+  info: info
+
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: password123
+
+
+
+eureka:
+  instance:
+    hostname: eureka8061.comm
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+
+
+
+
+# 配置 info 详情信息
+info:
+  app:
+    name: cloud-eureka-server
+  company:
+    name: www.gmall.com
+  build:
+    artifactId: $project.artifactId$
+    version: $project.version$
