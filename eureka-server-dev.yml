@@ -1,5 +1,9 @@
 server:
   port: 8061
+ 
+spring:
+  application:
+    name:  eureka-server
 
 logging:
   info: info
@@ -9,8 +13,8 @@ security:
   basic:
     enabled: false
   user:
-    name: user
-    password: password123
+    name: gmall
+    password: gmall123
 
 
 
@@ -22,16 +26,3 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
-
-
-
-
-# 配置 info 详情信息
-info:
-  app:
-    name: cloud-eureka-server
-  company:
-    name: www.gmall.com
-  build:
-    artifactId: $project.artifactId$
-    version: $project.version$
