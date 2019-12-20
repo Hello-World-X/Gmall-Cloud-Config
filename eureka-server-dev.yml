@@ -1,13 +1,5 @@
 server:
   port: 8061
- 
-spring:
-  application:
-    name:  eureka-server
-
-logging:
-  info: info
-
 
 security:
   basic:
